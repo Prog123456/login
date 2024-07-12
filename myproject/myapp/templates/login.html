@@ -1,0 +1,114 @@
+
+
+{% include "base.html" %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Scientiaarc Solutions LLP | Scientiaarcsolutions.com</title>
+   
+    
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/employee_login.css' %}">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+
+    <style>
+        .loginform p, .loginform label {
+            line-height: 0.1; 
+        }
+        .body {
+            background-image: url("{% static 'images/bg.jpg' %}");
+        }
+
+        .form-control::placeholder {
+        font-size: 10px; /* Adjust the font size as per your requirement */
+        opacity: 0.2; /* Adjust the opacity as per your requirement */
+        font-style: italic;
+        }
+    </style>
+    {% comment %} <script>
+        $(document).ready(function(){
+        $('.alert').hide(3000);
+    })
+    </script> {% endcomment %}
+</head>
+
+<body class="form-login-body"> 
+    
+    <form action="{% url 'dologin' %}" method="POST" name="login" autocomplete="off">
+        
+       
+        {%csrf_token%}
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto login-desk">
+                    <div class="row">
+                        <div class="col-md-7 detail-box">
+                            <img src="{% static 'images/logo.png' %}" alt="">
+                        </div>
+                        <div class="col-md-5 loginform">
+                            <h4>Welcome to Scientiaarc</h4>                   
+                            <p>Login to View Your Details!</p>
+                            <hr>
+                            <div class="login-det">
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="alert alert-{{ message.tages }}">
+                                        {{message}}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                      
+                               
+                                   
+                                <div class="form-row">
+                                    <label for="">Login ID</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            
+                                                <i class="far fa-user"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text" name="employee_ID" class="form-control" placeholder="Enter Your ID" style="font-size: 8px; opacity: 0.8; font-style: italic; color:grey;"  required />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <label for="">Password</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                        </div>
+                                        <input type="password" class="form-control" placeholder="Enter Your Password" name="password"  aria-describedby="basic-addon1"style="font-size: 8px; opacity: 0.8; font-style: italic; color: grey;" required />
+                                    </div>
+                                </div>
+                                <p class="forget"><a href="">Forget Password?</a></p>
+                                <a href=""><button class="btn btn-sm btn-danger" type="submit">Login</button></a>
+                                <hr>
+                                {% comment %} <p class="signup">New to Scientiaarc? <a href="" style="color: rgb(216, 21, 21);"><u>Create New</u></a></p> {% endcomment %}
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form> 
+    
+</body>
+</html>

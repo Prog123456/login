@@ -1,0 +1,86 @@
+{% extends "admin_page\sidebar.html" %}
+{% block content %}
+<main style="border-top-left-radius: 5%;">
+      
+    <div class="head-title">
+        <div class="left">
+          <div class="content container-fluid pb-0">
+
+            <div class="page-header">
+            <div class="row">
+            <div class="col-sm-12">
+              <a class="dropdown-item gap-2 py-2" href="javascript:;"><h3 class="page-title">Welcome  Admin!</h3></a>
+            
+            <ul class="breadcrumb">
+            <li class="breadcrumb-item active">Dashboard</li>
+            </ul>
+            </div>
+            </div>
+            </div></div>
+        </div>
+    </div>
+
+    <ul class="box-info">
+        
+    </ul>
+    <ul class="table-info">
+      
+      
+    </ul>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+          <div class="card dash-widget">
+              <div class="admin-summary card-body">
+                  <span class="dash-widget-icon"><i class="fa-solid fa-diagram-project"></i></span>
+                  <div class="dash-widget-info">
+                      <h3>112</h3>
+                      <span>Projects</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+          <div class="card dash-widget">
+              <div class="admin-summary card-body">
+                  <span class="dash-widget-icon">
+                      <i class="bi bi-person-lines-fill"></i>
+                      <i class='bx bxs-user-detail'></i>
+                  </span>
+                  <div class="dash-widget-info">
+                      <h3>44</h3>
+                      <span>Clients</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+          <div class="card dash-widget">
+              <div class="admin-summary card-body">
+                  <span class="dash-widget-icon"><i class="fa-solid fa-list-check"></i></span>
+                  <div class="dash-widget-info">
+                      <h3>37</h3>
+                      <span>Tasks</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+          <div class="card dash-widget">
+              <a href="" style="color: #474747;">
+                  <div class="admin-summary card-body">
+                      <span class="dash-widget-icon"><i class="fa-solid fa-users"></i></span>
+                      <div class="dash-widget-info">
+                          <h3>{{ employee_count }}</h3>
+                          <span>
+                              <a href="" style="color: #474747;">Employees</a>
+                          </span>
+                      </div>
+                  </div>
+              </a>
+          </div>
+      </div>
+      
+
+  </main>
+  {% endblock %}
